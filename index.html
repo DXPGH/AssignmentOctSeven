@@ -77,10 +77,22 @@
 
     <p>1. First, accept all the data from user and then display them.</p>
 
+    <p><label for="fourDigitID">Input your ID: <br> <input type="number" min="1000" max="9999"></label></p>
+
+    <p><label for="firstName">Input your first name: <br> <input type="text" name="firstName" id="firstName"></label></p>
+
+    <p><label for="lastName">Input your last name: <br> <input type="text" name="lastName" id="lastName"></label></p>
+
+    <p><label for="phone">Input your phone: <br> <input type="tel" name="phone" id="phone"></label></p>
+
+    <p><label for="address">Input your address (city, state): <br> <input type="text"></label></p>
+
     <p>2. Second, read and display data from a file.</p>
 
     <div>
         <input type="file">
+        <button onclick="">Submit File</button>
+        <div id="displayInfo2"></div>
     </div>
 
     <script src="app.js"></script>
