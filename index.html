@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Assignment - HTML,CSS, and JS</title>
+  </head>
+  <body>
+    <!-- Design a GUI using HTML and CSS for each of the following Javascript problem statements: 
+    1. Create a calculator that takes 3 numbers and 2 operators as an input from the user. Use functions. Precedence is to be maintained. Have the math functions in a separate script file.
+    2. Max enjoys working out in a gym. Based on the day chosen, display a workout that Max has planned for that day.
+    3. Choose any3 geometric shapes. Based on the shape chosen by the user, accept the coordinates/points for the shape. Draw the shape. (Hint: Use canvas)
+    4. Print a 4-digit id, the first name, last name, phone-number and address (city, state) of your team members and display the output. Input the data into the script in 2 ways as follows: 
+        1. First, accept all  the data from user and then display them.
+        2. Second, read and display data from a file.-->
+
+
+    <div class="calc">
+        <p>1. Create a calculator that takes 3 numbers and 2 operators as an input from the user. Use functions. Precedence is to be maintained. Have the math functions in a separate script file.</p>
+      <p><label for="firstNumber"></label><input type="number" id="firstNumber" name="firstNumber" /></p>
+      <select name="addOrSubtract" id="addOrSubtract">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="x">x</option>
+      </select>
+      <p><label for="secondNumber"></label><input type="number" id="firstNumber" name="firstNumber" /></p>
+      <select name="addOrSubtract" id="addOrSubtract2">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="x">x</option>
+      </select>
+      <p><label for="thirdNumber"></label><input type="number" id="firstNumber" name="firstNumber" /></p>
+
+      <button onclick="">Calculate</button>
+      <p id="calculationAns">XXXX</p>
+    </div>
+
+    <p>2. Max enjoys working out in a gym. Based on the day chosen, display a workout that Max has planned for that day.</p>
+
+    <div class="workoutPlan">
+      <!-- <table border="1">
+        <thead>
+          <tr>
+            <td>Monday</td>
+            <td>Tuesday</td>
+            <td>Wednesday</td>
+            <td>Thursday</td>
+            <td>Friday</td>
+            <td>Saturday</td>
+            <td>Sunday</td>
+          </tr>
+        </thead>
+        <tbody>
+                <tr>
+                  <td><button>Workouts</button>
+                <li>workout 1</li>
+            <li></li></td>
+                  <td>100</td>
+                  <td>February</td>
+                  <td>150</td>
+                  <td>February</td>
+                  <td>150</td>
+                  <td>ajd;lflasd</td>
+                </tr>
+        </tbody>
+      </table> -->
+
+      <select name="addOrSubtract" id="addOrSubtract">
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+      </select>
+      <button onclick="">Show Workouts</button>
+
+      <div id="workouts">
+        <ul>
+          <li>1. XXX Workout</li>
+          <li>2. XXX Workout</li>
+          <li>3. XXX Workout</li>
+          <li>4. XXX Workout</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>3. Choose any3 geometric shapes. Based on the shape chosen by the user, accept the coordinates/points for the shape. Draw the shape. (Hint: Use canvas)</p>
+
+    <div class="geometric">
+      <button onclick="">Triangle</button>
+      <button onclick="">Rectangle</button>
+      <button onclick="">Circle</button>
+      <div id="canvas"></div>
+    </div>
+
+    <p>4. Print a 4-digit id, the first name, last name, phone-number and address (city, state) of your team members and display the output. Input the data into the script in 2 ways as follows:</p>
+
+    <p>1. First, accept all the data from user and then display them.</p>
+
+    <p>2. Second, read and display data from a file.</p>
+
+    <div>
+        <input type="file">
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
