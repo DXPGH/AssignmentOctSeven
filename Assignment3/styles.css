@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #FEF2E6;
+}
+
+button {
+    padding: 1.2em;;
+    border: none;
+    background-color: #95C7CC;
+    border-radius: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+}
+
+.buttonsdiv {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#canvas {
+    background-color: #9A9A9A;
+    width: 50vw;
+    height: 50vh;
+}
