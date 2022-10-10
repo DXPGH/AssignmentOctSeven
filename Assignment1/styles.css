@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #ddb6e3;
+  font-family: "Poppins", sans-serif;
+}
+
+button,
+input,
+select,
+option {
+  background-color: #ffebad;
+  padding: 1.2em;
+  border: none;
+}
+
+.calc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2%;
+  margin: 2%;
+  font-size: 1.5em;
+}
+
+.calc > p {
+  margin-bottom: 2em;
+}
+
+.calc > select {
+  margin-bottom: 2em;
+}
+
+#calculationAns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black solid 1px;
+  margin: 2%;
+  padding: 2%;
+  background-color: #ffebad;
+}
