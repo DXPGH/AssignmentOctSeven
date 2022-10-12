@@ -17,10 +17,14 @@ const mouse = {
 let shape = "";
 
 function draw(shapes) {
-  canvas.addEventListener("click", function (event) {
+  canvas.addEventListener("mousemove", function (event) {
     mouse.x = event.x;
     mouse.y = event.y;
     statusDiv.innerHTML = mouse.x + " | " + mouse.y;
+  });
+  canvas.addEventListener("click", function (event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
     switch (shapes) {
       case "halfCircle":
         drawHalfCircle();
@@ -63,5 +67,4 @@ function drawCircle() {
 
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  canvas.removeEventListener("click", event);
 }
