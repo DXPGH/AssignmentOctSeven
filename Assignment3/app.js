@@ -1,21 +1,68 @@
-function square() {
-  let canvas = document.getElementById("canvas");
-  canvas.innerHTML = `<svg width="300" height="180">
-  <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
-  style="fill:yellow;stroke:black;stroke-width:5;opacity:0.5" />
-</svg>`;
+const canvas = document.getElementById("canvas1");
+const ctx = canvas.getContext("2d");
+let statusDiv = document.getElementById("status");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("resize", function () {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+const mouse = {
+  x: null,
+  y: null,
+};
+
+function halfCircle() {
+  canvas.addEventListener("click", function (event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    statusDiv.innerHTML = mouse.x + " | " + mouse.y;
+    drawHalfCircle();
+  });
+}
+
+function drawHalfCircle() {
+  ctx.fillStyle = "purple";
+  ctx.beginPath();
+  ctx.arc(mouse.x, mouse.y, 50, 0, Math.PI);
+  ctx.fill();
 }
 
 function rectangle() {
-  let canvas = document.getElementById("canvas");
-  canvas.innerHTML = `<svg width="300" height="100">
-    <rect width="300" height="100" style="fill:rgb(0,100,150);stroke-width:10;stroke:rgb(10,10,10)" />
-</svg>`;
+  canvas.addEventListener("click", function (event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    statusDiv.innerHTML = mouse.x + " | " + mouse.y;
+    drawRectangle();
+  });
+}
+
+function drawRectangle() {
+  ctx.fillStyle = "red";
+  ctx.beginPath();
+  ctx.rect(mouse.x, mouse.y, 150, 100);
+  ctx.fill();
 }
 
 function circle() {
-  let canvas = document.getElementById("canvas");
-  canvas.innerHTML = `<svg width="100" height="100">
-    <circle cx="50" cy="50" r="40" stroke="orange" stroke-width="4" fill="red" />
-    </svg>`;
+  canvas.addEventListener("click", function (event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    statusDiv.innerHTML = mouse.x + " | " + mouse.y;
+    drawCircle();
+  });
+}
+
+function drawCircle() {
+  ctx.fillStyle = "blue";
+  ctx.beginPath();
+  ctx.arc(mouse.x, mouse.y, 50, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  canvas.removeEventListener("click", event);
 }

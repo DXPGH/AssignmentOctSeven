@@ -35,8 +35,8 @@ button::after {
   margin-bottom: 2%;
 }
 
-#canvas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+canvas {
+  width: 500px;
+  height: 500px;
+  background-color: white;
 }
