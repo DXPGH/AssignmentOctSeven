@@ -61,6 +61,6 @@ form.addEventListener('submit',function(e){
         break;
 
     }
-    const workoutList = document.createElement("div")
+   
     
 })
