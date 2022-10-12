@@ -16,28 +16,30 @@ const mouse = {
 
 let shape = "";
 
-function currshape(str){
-  shape = str;
+function draw(shapes) {
+  canvas.addEventListener("mousemove", function (event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    statusDiv.innerHTML = mouse.x + " | " + mouse.y;
+  });
+  canvas.addEventListener("click", function (event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    switch (shapes) {
+      case "halfCircle":
+        drawHalfCircle();
+        break;
+      case "rectangle":
+        drawRectangle();
+        break;
+      case "circle":
+        drawCircle();
+        break;
+      default:
+        console.log("No Shape was chosen.");
+    }
+  });
 }
-
-canvas.addEventListener("click", function (event) {
-  mouse.x = event.x;
-  mouse.y = event.y;
-  statusDiv.innerHTML = mouse.x + " | " + mouse.y;
-  switch (shape) {
-    case "halfCircle":
-      drawHalfCircle();
-      break;
-    case "rectangle":
-      drawRectangle();
-      break;
-    case "circle":
-      drawCircle();
-      break;
-    default:
-      console.log("No Shape was chosen.");
-  }
-});
 
 function drawHalfCircle() {
   ctx.fillStyle = "purple";
@@ -65,5 +67,4 @@ function drawCircle() {
 
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  canvas.removeEventListener("click", event);
 }
