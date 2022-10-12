@@ -8,11 +8,11 @@ function Display(){
     var outputbox = document.getElementById("outputbox");
     var tempstring = "";
 
-    if(id != "") tempstring += id + "\r\n";
-    if(fname != "") tempstring += fname + "\r\n";
-    if(lname != "") tempstring += lname + "\r\n";
-    if(phone != "") tempstring += phone + "\r\n";
-    if(address != "") tempstring += address + "\r\n";
+    if(id != "") tempstring += "ID: " + id + "\r\n";
+    if(fname != "") tempstring += "First name: " + fname + "\r\n";
+    if(lname != "") tempstring += "Last name: " + lname + "\r\n";
+    if(phone != "") tempstring += "Phone: " + phone + "\r\n";
+    if(address != "") tempstring += "Address: " + address + "\r\n";
                 
     outputbox.textContent = tempstring;
     
