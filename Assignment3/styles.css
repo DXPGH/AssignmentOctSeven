@@ -36,7 +36,7 @@ button::after {
 }
 
 #canvas {
-  background-color: #9a9a9a;
-  width: 50vw;
-  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
