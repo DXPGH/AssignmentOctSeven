@@ -1,3 +1,4 @@
+// Get canvas and statusDiv
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 let statusDiv = document.getElementById("status");
@@ -9,6 +10,7 @@ window.addEventListener("resize", function () {
   canvas.height = window.innerHeight;
 });
 
+// Mouse X,Y object
 const mouse = {
   x: null,
   y: null,
@@ -16,14 +18,21 @@ const mouse = {
 
 let shape = "";
 
-function currshape(str){
+function currshape(str) {
   shape = str;
 }
 
-canvas.addEventListener("click", function (event) {
+// EventListener for Mouse Coordinates to display live
+canvas.addEventListener("mousemove", function (event) {
   mouse.x = event.x;
   mouse.y = event.y;
   statusDiv.innerHTML = mouse.x + " | " + mouse.y;
+});
+
+// EventListener for Canvas to draw each shape
+canvas.addEventListener("click", function (event) {
+  mouse.x = event.x;
+  mouse.y = event.y;
   switch (shape) {
     case "halfCircle":
       drawHalfCircle();
@@ -40,7 +49,7 @@ canvas.addEventListener("click", function (event) {
 });
 
 function drawHalfCircle() {
-  ctx.fillStyle = "purple";
+  ctx.fillStyle = "red";
   ctx.beginPath();
   ctx.arc(mouse.x, mouse.y, 50, 0, Math.PI);
   ctx.fill();
@@ -48,7 +57,7 @@ function drawHalfCircle() {
 }
 
 function drawRectangle() {
-  ctx.fillStyle = "red";
+  ctx.fillStyle = "green";
   ctx.beginPath();
   ctx.rect(mouse.x, mouse.y, 150, 100);
   ctx.fill();
@@ -65,5 +74,4 @@ function drawCircle() {
 
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  canvas.removeEventListener("click", event);
 }
