@@ -6,6 +6,15 @@ function clearForm(id){
     document.getElementById(id).innerHTML = ""
 }
 
+function addli(event){
+    
+    let li = document.createElement('li')
+    let text= document.createTextNode(event);
+    li.appendChild(text)
+    list.appendChild(li)
+ 
+}
+
 form.addEventListener('submit',function(e){
     e.preventDefault();
     let select = document.getElementById('workoutday')
@@ -14,34 +23,39 @@ form.addEventListener('submit',function(e){
     switch(day){
         case 'Monday':
             clearForm('workouts')
-            let li1 = document.createElement('li')
-            let text1= document.createTextNode('Running');
-            li1.appendChild(text1)
-            list.appendChild(li1)
-
-
+            addli('Squat Jump 10*3')
+            addli('Push Up 10*3')
+            addli('Dumbell Press 6*5')
         break;
         case 'Tuesday':
             clearForm('workouts')
-            let li2 = document.createElement('li')
-            let text2= document.createTextNode('Lower Body');
-            li2.appendChild(text2)
-            list.appendChild(li2)
+            addli('Cardio 45min')
         break;
         case 'Wednesday':
             clearForm('workouts')
-            let li3 = document.createElement('li')
-            let text3= document.createTextNode('Upper Body');
-            li3.appendChild(text3)
-            list.appendChild(li3)
+            addli('Sit Up 20')
+            addli('Dip 6*5')
+            addli('Russian Twist 5*5')
         break;
-        case 'Thursday':console.log('Relax ')
+        case 'Thursday':
+            clearForm('workouts')
+            addli('Relax')
         break;
-        case 'Friday':console.log('Upper Body')
+        case 'Friday':
+            clearForm('workouts')
+            addli('Pull Up 6*5')
+            addli('Jumping Jack 20*5')
+            addli('Bicycle Crunch 2min')
         break;
-        case 'Saturday':console.log('Lower Body')
+        case 'Saturday':
+            clearForm('workouts')
+            addli('Lunge Split Jump 10*3')
+            addli('Plank 60sec')
+            
         break;
-        case 'Sunday':console.log('Relax')
+        case 'Sunday':
+            clearForm('workouts')
+            addli('Cardio 45min')
         break;
         default: console.log('what day you choose?')
         break;
