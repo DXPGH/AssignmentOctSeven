@@ -14,12 +14,26 @@ const mouse = {
   y: null,
 };
 
-function halfCircle() {
+let shape = "";
+
+function draw(shapes) {
   canvas.addEventListener("click", function (event) {
     mouse.x = event.x;
     mouse.y = event.y;
     statusDiv.innerHTML = mouse.x + " | " + mouse.y;
-    drawHalfCircle();
+    switch (shapes) {
+      case "halfCircle":
+        drawHalfCircle();
+        break;
+      case "rectangle":
+        drawRectangle();
+        break;
+      case "circle":
+        drawCircle();
+        break;
+      default:
+        console.log("No Shape was chosen.");
+    }
   });
 }
 
@@ -28,15 +42,7 @@ function drawHalfCircle() {
   ctx.beginPath();
   ctx.arc(mouse.x, mouse.y, 50, 0, Math.PI);
   ctx.fill();
-}
-
-function rectangle() {
-  canvas.addEventListener("click", function (event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
-    statusDiv.innerHTML = mouse.x + " | " + mouse.y;
-    drawRectangle();
-  });
+  ctx.closePath();
 }
 
 function drawRectangle() {
@@ -44,15 +50,7 @@ function drawRectangle() {
   ctx.beginPath();
   ctx.rect(mouse.x, mouse.y, 150, 100);
   ctx.fill();
-}
-
-function circle() {
-  canvas.addEventListener("click", function (event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
-    statusDiv.innerHTML = mouse.x + " | " + mouse.y;
-    drawCircle();
-  });
+  ctx.closePath();
 }
 
 function drawCircle() {
@@ -60,6 +58,7 @@ function drawCircle() {
   ctx.beginPath();
   ctx.arc(mouse.x, mouse.y, 50, 0, Math.PI * 2);
   ctx.fill();
+  ctx.closePath();
 }
 
 function clearCanvas() {
